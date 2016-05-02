@@ -1,0 +1,9 @@
+
+<h1 class="page-header">List of Available courses</h1>
+<% if @courses.count==0 %>
+<h2><%= "there are no currently any courses !" %></h2>
+<%else%>
+  <% @courses.each do |course| %>
+    <h2><%= link_to course.title,course_path(course) %> </h2>
+  <%  end %>
+<% end %>

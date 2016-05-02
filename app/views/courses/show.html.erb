@@ -1,0 +1,5 @@
+
+<h1><%= @course.title %></h1>
+  <%=  link_to "back",root_path %>
+  <%= link_to "Edit",edit_course_path(@course) %>
+  <%= link_to "Delete", course_path(@course) ,method: :delete ,data: { confirm: "Are you sure?"}%>
