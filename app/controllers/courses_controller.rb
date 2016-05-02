@@ -1,16 +1,17 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit, :update, :destroy]
-  
+  before_action :find_course, only: [:show ,:edit ,:update ,:destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
+
   def index
     @courses=Course.all
   end
   
   def new
-    @course=Course.new
+    @course=current_user.courses.new
   end
   
   def create
-    @course=Course.new(course_params)
+    @course=current_user.courses.new(course_params)
     if @course.save
       redirect_to root_path
     else
