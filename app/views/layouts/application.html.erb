@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <nav class='navbar navbar-inverse'>
+    <nav class='navbar navbar-default'>
             <div class="container">
               <div class="navbar_header">
                  <%= link_to "Home",root_path,class: "navbar-brand"  %>
@@ -24,7 +24,10 @@
                 <ul class="nav navbar-nav navbar-right">
 
                  <%if user_signed_in? %>
-                     <li><%= link_to 'Add Course',new_course_path %></li>                     
+                    <li><%= link_to 'Add Course',new_course_path %></li>                     
+                    <li class="form-inputs">welcome <%= current_user.name %> </li>
+                    <img src=<%= current_user.image %>/>
+
                      <% end %>
                 </ul>
             </div>
@@ -38,3 +41,10 @@
 
 </body>
 </html>
+<style>
+    img{
+        width: 50px;
+        height: 50px;
+        margin-left: 20px    
+    }
+    </style>
