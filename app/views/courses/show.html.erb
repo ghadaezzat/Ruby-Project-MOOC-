@@ -1,5 +1,20 @@
 
 <h1><%= @course.title %></h1>
-  <%=  link_to "back",root_path %>
-  <%= link_to "Edit",edit_course_path(@course) %>
-  <%= link_to "Delete", course_path(@course) ,method: :delete ,data: { confirm: "Are you sure?"}%>
+ <% if user_signed_in? %>
+    <% if @course.user_id == current_user.id %>
+        <%= link_to "Edit",edit_course_path(@course) %>
+        <%= link_to "Delete", course_path(@course) ,method: :delete ,data: { confirm: "Are you sure?"}%>
+    <%end%>
+  <%end%>
+<h2 class="info">Lectures:</h2>
+
+<p><%= render @course.lectures %><p>
+
+<%=  link_to "back",root_path ,:class => 'link'%>
+
+  <% if user_signed_in? %>
+    <% if @course.user_id == current_user.id %>
+      <%= link_to "Add lecture",new_course_lecture_path(@course) %>
+      
+    <% end %>
+  <% end %>

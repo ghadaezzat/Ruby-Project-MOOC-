@@ -1,0 +1,9 @@
+
+<h1 class="page-header"> lectures <%= params[:course] %></h1>
+<% if @lectures.count==0 %>
+  <h2><%= "there are no lectures in this course!" %></h2>
+<%else%>
+  <% @lectures.each do |lecture| %>
+    <h2><%= link_to lecture.content ,course_lecture_path( lecture ) %> </h2>
+  <%  end %>
+<% end %>

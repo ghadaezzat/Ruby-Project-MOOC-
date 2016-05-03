@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :courses
+  resources :courses do
+    resources :lectures
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get "lectures/download_pdf"
 
   # You can have the root of your site routed with "root"
    root 'courses#index'

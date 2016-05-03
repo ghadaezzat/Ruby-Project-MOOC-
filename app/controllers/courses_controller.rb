@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show ,:edit ,:update ,:destroy]
+  before_action :find_course , only: [:show,:edit , :update , :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
@@ -39,10 +39,10 @@ class CoursesController < ApplicationController
     @course.destroy
     redirect_to root_path
   end
+  
   private
       def course_params
         params.require(:course).permit(:title)
-   
       end
       
       def find_course

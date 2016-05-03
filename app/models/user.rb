@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :courses
+  has_many :lectures
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :image, ImageUploader
