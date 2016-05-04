@@ -11,7 +11,7 @@ class LecturesController < ApplicationController
   def new
     @lecture=Lecture.new
   end
-  
+
   def create
     @lecture=Lecture.new(lecture_params)
     @lecture.course_id=@course.id
@@ -24,7 +24,8 @@ class LecturesController < ApplicationController
   end
   
   def show
-    @commontable=@lecture
+    commontator_thread_show(@lecture)
+
   end
   def upvote
     @lecture.upvote_from current_user

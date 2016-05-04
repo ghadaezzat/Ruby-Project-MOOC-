@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504171305) do
+ActiveRecord::Schema.define(version: 20160504193813) do
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type",      limit: 255
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20160504171305) do
     t.string   "gender",                 limit: 6
     t.date     "birthdate"
     t.string   "image",                  limit: 255
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
