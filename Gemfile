@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'disqus', '~> 1.0', '>= 1.0.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'carrierwave', '~> 0.9'
 gem 'devise', '~> 4.0', '>= 4.0.1'
