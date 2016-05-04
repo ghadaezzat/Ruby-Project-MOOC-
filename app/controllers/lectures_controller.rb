@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   
-  before_action :find_course ,only: [:upvote ,:downvote] 
+  before_action :find_course ,only: [:new,:create,:upvote ,:downvote] 
   before_action :find_lecture ,only: [:show ,:upvote ,:downvote]
   before_action :authenticate_user!, only: [:new]
   
@@ -24,6 +24,7 @@ class LecturesController < ApplicationController
   end
   
   def show
+    
   end
   def upvote
     @lecture.upvote_from current_user
