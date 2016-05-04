@@ -24,7 +24,7 @@ class LecturesController < ApplicationController
   end
   
   def show
-    
+    @commontable=@lecture
   end
   def upvote
     @lecture.upvote_from current_user

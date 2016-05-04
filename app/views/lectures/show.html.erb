@@ -17,11 +17,16 @@
     </div>
 <div class="caption col-md-1" style="text-align: center; "><%= link_to unlike_course_lecture_path ,class: "like",method: :put do %>
     <button type="button" class="btn btn-danger">
-    <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"/>
-    <span class="badge"><%= @lecture.get_downvotes.size %>
+        <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+    <span class="badge"><%= @lecture.get_downvotes.size %></span>
     </button> 
     <% end %>    
 
 </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+      <%= commontator_thread(@commontable) %>
+    </div>
 </div>
 <%  end %>
