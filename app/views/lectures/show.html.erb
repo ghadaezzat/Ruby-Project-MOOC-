@@ -3,3 +3,11 @@
 <%= @lecture.content %>
 <br>
 <%= link_to 'Download pdf',  lectures_download_pdf_path(@lecture) %>
+<div class="caption" style="text-align: center; "><%= link_to like_course_lecture_path ,class: "like",method: :put do %>
+    <button type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center"/>
+    <span class="badge"><%= @lecture.get_upvotes.size %>
+    </button> 
+    <% end %>    
+
+</div>

@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
   
-  before_action :find_course 
-  before_action :find_lecture ,only: [:show]
+  before_action :find_course ,only: [:upvote ,:downvote] 
+  before_action :find_lecture ,only: [:show ,:upvote ,:downvote]
   before_action :authenticate_user!, only: [:new]
   
   def index
@@ -25,7 +25,14 @@ class LecturesController < ApplicationController
   
   def show
   end
-  
+  def upvote
+    @lecture.upvote_from current_user
+    redirect_to course_lecture_path
+  end
+  def downvote
+    @lecture.downvote_from current_user
+    redirect_to course_lecture_path 
+  end
   private
       def find_lecture
         @lecture = Lecture.find(params[:id])
