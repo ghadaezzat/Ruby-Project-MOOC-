@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course , only: [:show,:edit , :update , :destroy]
+  before_action :find_course , only: [:edit ,:show, :update , :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
   end
   
   def show
-  
+
   end
   def edit
     

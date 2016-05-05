@@ -1,10 +1,15 @@
 
 <h1>show lecture</h1>
-<%= @lecture.content.html_safe %>
+<p><%= @lecture.content.html_safe %></p>
 <br>
  <% if user_signed_in? %>
+    <% if @lecture.user_id == current_user.id %>
+        <%= link_to "Edit",edit_course_lecture_path ,:class => "btn btn-success"%> |
+        <%= link_to "Delete", course_lecture_path(:id =>@lecture.id,:course_id => @lecture.course_id) ,method: :delete ,data: { confirm: "Are you sure?"} ,:class => "btn btn-danger" %>
+    <%end%>
    <% if @lecture.attachment.blank? %>
     <h3>NO Attachment available</h3>
+
    <% else %>
     <br>
     <br>

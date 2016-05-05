@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'will_paginate', '~> 3.1'
+gem 'autoprefixer-rails', '~> 6.3', '>= 6.3.6'
 gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'rails_admin', '~> 0.8.1'

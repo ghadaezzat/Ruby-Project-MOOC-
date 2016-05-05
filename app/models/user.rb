@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :courses
+  has_many :courses 
   has_many :lectures
   acts_as_voter
   acts_as_commontator

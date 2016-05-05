@@ -6,7 +6,7 @@
 <div class="row stylish-panel">
   <% @courses.each do |course| %>
 <div class="col-md-3 img-thumbnail">
-    <h2><%=course.title %></h2>
+    <h4><%=course.title %></h4>
 <%= link_to "view course" ,course_path(course) ,class: "btn-lg btn-info"%>
 </div>
   <%  end %>

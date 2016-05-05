@@ -1,9 +1,18 @@
 
 <div class="jumbotron">
-     content: <%= lecture.content.html_safe %>
+    <h4 class="card-title">Content:</h4>
+    <p class="card-text"> <%= lecture.content.html_safe %></p>
      <br>
      <br>
 
-<%= link_to 'show more',  course_lecture_path(@course,lecture)%>
+<%= link_to 'show more',  course_lecture_path(@course,lecture),:class =>" card-link btn btn-primary"%>
 
 </div>
+<style type="text/css">
+p {
+    height:20px;
+    line-height:20px; /* Height / no. of lines to display */
+    overflow:hidden;
+} 
+    
+</style>

@@ -1,8 +1,8 @@
 class LecturesController < ApplicationController
   
-  before_action :find_course ,only: [:new,:create,:upvote ,:downvote] 
-  before_action :find_lecture ,only: [:show ,:upvote ,:downvote]
-  before_action :authenticate_user!, only: [:new]
+  before_action :find_course ,only: [:new,:create,:edit,:update,:upvote ,:downvote] 
+  before_action :find_lecture ,only: [:show ,:edit,:update,:upvote ,:destroy,:downvote]
+  before_action :authenticate_user!, only: [:new ,:edit]
   
   def index
     @lectures=Lecture.all
@@ -26,6 +26,20 @@ class LecturesController < ApplicationController
   def show
     commontator_thread_show(@lecture)
 
+  end
+  def edit
+    
+  end
+  def update
+    if @lecture.update(lecture_params)
+        redirect_to course_lecture_path(@lecture,@course) 
+    else
+      render 'edit'
+    end  
+  end
+  def destroy
+    @lecture.destroy
+    redirect_to course_path(:id =>@lecture.course_id)
   end
   def upvote
     @lecture.upvote_from current_user
