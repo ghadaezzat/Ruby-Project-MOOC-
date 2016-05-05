@@ -3,8 +3,15 @@
 <%= @lecture.content %>
 <br>
  <% if user_signed_in? %>
-
-<%= link_to 'Download pdf',  lectures_download_pdf_path(@lecture) %>
+   <% if @lecture.attachment.blank? %>
+    <h3>NO Attachment available</h3>
+   <% else %>
+    <br>
+    <br>
+    <a class="btn btn-info glyphicon glyphicon-file" href="<%= @lecture.attachment %>">download pdf</a>
+ <% end %>
+<br>
+<br>
 <br>
 <div class="row>">
     <div class="caption col-md-1" style="text-align: center; "><%= link_to like_course_lecture_path ,class: "like",method: :put do %>
