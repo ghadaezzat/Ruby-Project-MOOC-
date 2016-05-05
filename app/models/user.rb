@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
 
   validates :birthdate,
   :presence => true
+  def name
+  User.name
+  end
 end
