@@ -1,7 +1,7 @@
-
+<%= javascript_include_tag Ckeditor.cdn_url%>
 <%= simple_form_for ([ @course, @lecture ]) do |f| %>
  
-  <%= f.input :content %>
+  <%= f.cktext_area :content %>
   <label>attachment:</label>
   <%= f.file_field :attachment ,required: true %>
 
