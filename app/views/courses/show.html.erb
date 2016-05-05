@@ -1,20 +1,24 @@
 
 <h1><%= @course.title %></h1>
  <% if user_signed_in? %>
+  <h3>instructor:<%= @course.user.name %> </h3>
+  <img src ="<%= @course.user.image %>"> </img>
     <% if @course.user_id == current_user.id %>
-        <%= link_to "Edit",edit_course_path(@course) %>
-        <%= link_to "Delete", course_path(@course) ,method: :delete ,data: { confirm: "Are you sure?"}%>
+
+<br><br>    
+        <%= link_to "Edit",edit_course_path(@course) ,:class =>"btn btn-success glyphicon glyphicon-ok"%>|
+        <%= link_to "Delete", course_path(@course) ,method: :delete ,data: { confirm: "Are you sure?"} ,:class =>"btn btn-danger glyphicon glyphicon-remove"%>
     <%end%>
   <%end%>
 <h2 class="info">Lectures:</h2>
 
-<p><%= render @course.lectures %><p>
+<%= render @course.lectures %>
 
-<%=  link_to "back",root_path ,:class => 'link'%>
+<%=  link_to " Back ",root_path ,:class => ' btn btn-primary glyphicon glyphicon-arrow-left '%>
 
   <% if user_signed_in? %>
     <% if @course.user_id == current_user.id %>
-      <%= link_to "Add lecture",new_course_lecture_path(@course) %>
+      <%= link_to "Add lecture",new_course_lecture_path(@course),:class => "btn btn-primary glyphicon glyphicon-plus" %>
       
     <% end %>
   <% end %>

@@ -5,9 +5,9 @@
 # below each fixture, per the syntax in the comments below
 #
 one: {
-name: hi
+name: ghada
 }
 # column: value
 #
-two: {}
+#two: {}
 #  column: value

@@ -1,31 +1,8 @@
-
-<h1 class="page-header">List of Available courses</h1>
+<body background="/assets/bb.jpg">
 <% if @courses.count==0 %>
 <h2><%= "there are no currently any courses !" %></h2>
-<%else%>
-<div class="row stylish-panel">
-  <% @courses.each do |course| %>
-<div class="col-md-3 img-thumbnail">
-    <h4><%=course.title %></h4>
-<%= link_to "view course" ,course_path(course) ,class: "btn-lg btn-info"%>
-</div>
-  <%  end %>
-</div>
+<img
+</body>
 <% end %>
-<style>
-    .img-thumbnail{
-        width:300px;
-        height:200px;
-        margin-right: 10px;
-        margin-bottom: 10px;
 
-          }
-    .btn-lg{
-        position: absolute;
-        bottom: 25px; /*your button position*/
-        right: 130px; /*your button position*/
-        }
-    .img-thumbnail{
-        background-color: #eee9e9
-        }
- </style>
+    

@@ -32,7 +32,7 @@ class LecturesController < ApplicationController
   end
   def update
     if @lecture.update(lecture_params)
-        redirect_to course_lecture_path(@lecture,@course) 
+        redirect_to course_lecture_path(:course_id =>@course.id ,:id =>@lecture.id) 
     else
       render 'edit'
     end  
